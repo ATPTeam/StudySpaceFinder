@@ -16,7 +16,7 @@ connectDB();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://study-space-bay-iota.vercel.app/" 
+  "https://study-space-bay-iota.vercel.app" 
 ];
 
 app.use(cors({ origin: allowedOrigins, credentials: true }));
