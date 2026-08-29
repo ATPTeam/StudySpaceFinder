@@ -21,7 +21,8 @@ const isCampusOpen = () => {
   const currentHour = now.getHours();
   const currentMinute = now.getMinutes();
   const currentTime = currentHour * 60 + currentMinute;
-  return currentTime >= 9 * 60 && currentTime < 16 * 60;
+  // return currentTime >= 9 * 60 && currentTime < 16 * 60;
+  return true;
 
 };
 

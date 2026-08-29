@@ -42,7 +42,7 @@ const getOperatingStatus = () => {
 
   const isOpen = currentTimeInMinutes >= openTime && currentTimeInMinutes < closeTime;
   return {
-    isOpen,
+    isOpen : true,
     closedMessage: "Closed · Opens at 9:00 AM",
   };
 };
