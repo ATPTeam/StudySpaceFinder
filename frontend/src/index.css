@@ -46,20 +46,14 @@ button {
 .navbar {
   height: 76px;
   padding: 0 5vw;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   border-bottom: 1px solid #e3e3dc;
-
   background: rgba(247, 247, 243, 0.96);
-
   position: sticky;
   top: 0;
-
   z-index: 50;
-
   backdrop-filter: blur(10px);
 }
 
@@ -67,35 +61,27 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
-
   font-family: "Manrope", sans-serif;
   font-weight: 800;
   font-size: 18px;
-
   letter-spacing: -0.5px;
 }
 
 .brand-mark {
   width: 30px;
   height: 30px;
-
   display: grid;
   place-items: center;
-
   background: #20231f;
   color: white;
-
   border-radius: 7px;
-
   font-size: 14px;
 }
 
 .nav-links {
   position: absolute;
   left: 50%;
-
   transform: translateX(-50%);
-
   display: flex;
   gap: 30px;
 }
@@ -103,11 +89,8 @@ button {
 .nav-link {
   border: 0;
   background: transparent;
-
   color: #85877f;
-
   padding: 8px 0;
-
   font-size: 14px;
 }
 
@@ -125,65 +108,57 @@ button {
 .campus-selector {
   border: 0;
   background: transparent;
-
   display: flex;
   align-items: center;
   gap: 5px;
-
   color: #55584f;
-
   font-size: 14px;
 }
 
 .profile-button {
   width: 35px;
   height: 35px;
-
   border-radius: 50%;
-
   border: 1px solid #d8d8d0;
-
   background: #ebece5;
-
   color: #55584f;
-
   font-weight: 600;
 }
 
 /* =====================================================
-   HERO
+   HERO TWO-COLUMN PROPORTIONAL GRID
 ===================================================== */
 
 .hero {
-  padding: 90px 5vw 55px;
+  padding: 60px 5vw 45px;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 5vw;
+  width: 100%;
 }
 
 .hero-content {
-  max-width: 680px;
+  max-width: 600px;
 }
 
 .eyebrow {
   margin: 0 0 20px;
-
   color: #767970;
-
   font-size: 11px;
   font-weight: 700;
-
   letter-spacing: 1.5px;
 }
 
 h1 {
   margin: 0;
-
   font-family: "Manrope", sans-serif;
-
   font-size: clamp(58px, 7vw, 94px);
-
   line-height: 0.94;
-
   letter-spacing: -5px;
-
   font-weight: 800;
 }
 
@@ -193,13 +168,9 @@ h1 span {
 
 .hero-description {
   max-width: 510px;
-
   margin: 28px 0 34px;
-
   color: #696c64;
-
   font-size: 17px;
-
   line-height: 1.6;
 }
 
@@ -210,19 +181,13 @@ h1 span {
 .search-box {
   width: min(650px, 100%);
   height: 58px;
-
   padding: 0 7px 0 18px;
-
   display: flex;
   align-items: center;
   gap: 11px;
-
   border: 1px solid #d8d9d1;
-
   background: white;
-
   border-radius: 11px;
-
   box-shadow: 0 4px 20px rgba(32, 35, 31, 0.04);
 }
 
@@ -234,10 +199,8 @@ h1 span {
 .search-box input {
   flex: 1;
   min-width: 0;
-
   border: 0;
   outline: 0;
-
   background: transparent;
 }
 
@@ -247,21 +210,14 @@ h1 span {
 
 .filter-button {
   height: 44px;
-
   padding: 0 15px;
-
   border: 1px solid #deded7;
-
   border-radius: 8px;
-
   background: #f6f6f1;
-
   display: flex;
   align-items: center;
   gap: 7px;
-
   color: #40433c;
-
   font-size: 13px;
   font-weight: 600;
 }
@@ -273,25 +229,17 @@ h1 span {
 .filters {
   display: flex;
   flex-wrap: wrap;
-
   gap: 8px;
-
   margin-top: 18px;
 }
 
 .filter-chip {
   border: 1px solid #deded7;
-
   background: transparent;
-
   color: #6b6e65;
-
   padding: 8px 13px;
-
   border-radius: 7px;
-
   font-size: 13px;
-
   transition: all 180ms ease;
 }
 
@@ -302,76 +250,206 @@ h1 span {
 
 .filter-chip.selected {
   background: #20231f;
-
   color: white;
-
   border-color: #20231f;
 }
 
 /* =====================================================
-   EXPLORER
+   WIDE PULSE CARD
+===================================================== */
+
+.hero-stats-card {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d8d9d1;
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 10px 30px rgba(32, 35, 31, 0.04);
+}
+
+.stats-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.stats-badge {
+  font-size: 10px;
+  font-weight: 700;
+  color: #8b8e85;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.stats-title-group h3 {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #20231f;
+  letter-spacing: -0.4px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.status-pill.open {
+  background: #edf3e8;
+  color: #435c36;
+  border: 1px solid #ccd8c5;
+}
+
+.status-pill.open .status-dot-indicator {
+  background: #69875b;
+}
+
+.status-pill.closed {
+  background: #fbf0ee;
+  color: #a84239;
+  border: 1px solid #eed6d3;
+}
+
+.status-pill.closed .status-dot-indicator {
+  background: #ad625a;
+}
+
+.status-dot-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.stat-item {
+  background: #f8f8f4;
+  border: 1px solid #e3e4dc;
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.stat-icon-wrapper {
+  width: 36px;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #d8d9d1;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  color: #4a4e44;
+  flex-shrink: 0;
+}
+
+.stat-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #696c64;
+  margin-bottom: 3px;
+}
+
+.stat-value {
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #20231f;
+  line-height: 1;
+}
+
+.stat-sub {
+  display: block;
+  font-size: 10px;
+  color: #8b8e85;
+  margin-top: 4px;
+}
+
+.stats-footer {
+  border-top: 1px solid #ebece4;
+  padding-top: 16px;
+}
+
+.stats-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12px;
+  color: #55584f;
+  line-height: 1.5;
+}
+
+.tip-icon {
+  color: #66725b;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* =====================================================
+   EXPLORER LAYOUT
 ===================================================== */
 
 .explorer {
   display: grid;
-
-  grid-template-columns:
-    minmax(390px, 0.82fr)
-    minmax(500px, 1.18fr);
-
+  grid-template-columns: minmax(390px, 0.85fr) minmax(500px, 1.15fr);
   min-height: 720px;
-
   border-top: 1px solid #e2e2db;
 }
 
 .spaces-panel {
   padding: 38px 4vw 60px 5vw;
-
   border-right: 1px solid #e2e2db;
+  height: calc(100vh - 76px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
 }
 
 .panel-header {
   display: flex;
-
   justify-content: space-between;
-  align-items: end;
-
+  align-items: flex-end;
   margin-bottom: 22px;
 }
 
 .result-count {
   color: #888b82;
-
   font-size: 12px;
-
   font-weight: 600;
-
   text-transform: uppercase;
-
   letter-spacing: 0.8px;
 }
 
 .panel-header h2 {
   margin: 6px 0 0;
-
   font-family: "Manrope", sans-serif;
-
   font-size: 24px;
-
   letter-spacing: -0.8px;
 }
 
 .sort-button {
   border: 0;
-
   background: transparent;
-
   display: flex;
   align-items: center;
   gap: 5px;
-
   color: #73766d;
-
   font-size: 12px;
 }
 
@@ -381,21 +459,18 @@ h1 span {
 
 .space-list {
   display: flex;
-
   flex-direction: column;
-
   gap: 12px;
+  padding-bottom: 60px;
 }
 
 .space-card {
+  opacity: 1 !important;
+  visibility: visible !important;
   padding: 21px;
-
   border: 1px solid #e1e1da;
-
   border-radius: 10px;
-
   background: white;
-
   transition:
     transform 220ms ease,
     box-shadow 220ms ease,
@@ -404,11 +479,8 @@ h1 span {
 
 .space-card:hover {
   transform: translateY(-3px);
-
   border-color: #c9cbc2;
-
-  box-shadow:
-    0 10px 28px rgba(32, 35, 31, 0.07);
+  box-shadow: 0 10px 28px rgba(32, 35, 31, 0.07);
 }
 
 .space-card.selected-card {
@@ -417,40 +489,29 @@ h1 span {
 
 .card-top {
   display: flex;
-
   justify-content: space-between;
 }
 
 .space-building {
   margin: 0 0 5px;
-
   color: #8b8e85;
-
   font-size: 11px;
-
   font-weight: 600;
-
   text-transform: uppercase;
-
   letter-spacing: 0.6px;
 }
 
 .space-card h3 {
   margin: 0;
-
   font-family: "Manrope", sans-serif;
-
   font-size: 19px;
-
   letter-spacing: -0.4px;
 }
 
 .status-dot {
   width: 9px;
   height: 9px;
-
   margin-top: 4px;
-
   border-radius: 50%;
 }
 
@@ -468,117 +529,90 @@ h1 span {
 
 .availability {
   display: flex;
-
   align-items: baseline;
-
   gap: 7px;
-
   margin-top: 18px;
 }
 
 .availability strong {
   font-family: "Manrope", sans-serif;
-
   font-size: 27px;
-
   letter-spacing: -1px;
 }
 
 .availability span {
   color: #7b7e75;
-
   font-size: 12px;
 }
 
 .occupancy-bar {
   height: 3px;
-
   margin-top: 10px;
-
   overflow: hidden;
-
   border-radius: 3px;
-
   background: #edede7;
 }
 
 .occupancy-bar span {
   display: block;
-
   height: 100%;
-
   border-radius: inherit;
-
   background: #92998a;
 }
 
 .card-meta {
   display: flex;
-
   justify-content: space-between;
-
   gap: 12px;
-
   margin-top: 13px;
-
   font-size: 11px;
 }
 
 .verification {
   display: flex;
-
   align-items: center;
-
   gap: 5px;
-
   color: #73766d;
 }
 
 .prediction {
   color: #66725b;
-
   font-weight: 600;
-
   text-align: right;
 }
 
 .facility-row {
   display: flex;
-
   flex-wrap: wrap;
-
   gap: 6px;
-
   margin-top: 15px;
 }
 
 .facility,
 .vibe {
   display: inline-flex;
-
   align-items: center;
-
   gap: 4px;
-
   padding: 5px 8px;
-
   border-radius: 5px;
-
   font-size: 10px;
-
   font-weight: 600;
 }
 
 .vibe {
   background: #e9ece4;
-
   color: #59634f;
 }
 
 .facility {
   background: #f3f3ee;
-
   color: #73766d;
+}
+
+/* THEME CHECK-IN HOVER */
+.theme-checkin-btn:hover:not(:disabled) {
+  background: #66725b !important;
+  transform: translateY(-1px);
 }
 
 /* =====================================================
@@ -587,1495 +621,45 @@ h1 span {
 
 .map-panel {
   position: sticky;
-
   top: 76px;
-
   height: calc(100vh - 76px);
-
-  min-height: 720px;
-
-  padding: 28px;
-
+  min-height: 650px;
+  padding: 24px;
   background: #eeeee8;
 }
 
 /* =====================================================
-   MAP SHELL
-===================================================== */
-
-.map-shell {
-  height: 100%;
-
-  overflow: hidden;
-
-  border: 1px solid #d9d9d1;
-
-  border-radius: 13px;
-
-  background: #e7e7df;
-
-  box-shadow:
-    0 10px 35px rgba(32, 35, 31, 0.05);
-}
-
-.map-toolbar {
-  height: 67px;
-
-  padding: 0 20px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  border-bottom: 1px solid #d6d6ce;
-
-  background: rgba(247, 247, 243, 0.95);
-}
-
-.map-toolbar span {
-  display: block;
-
-  color: #8b8e85;
-
-  font-size: 9px;
-
-  font-weight: 700;
-
-  letter-spacing: 1.2px;
-}
-
-.map-toolbar strong {
-  display: block;
-
-  margin-top: 3px;
-
-  font-family: "Manrope", sans-serif;
-
-  font-size: 15px;
-}
-
-.map-control {
-  border: 1px solid #d7d7cf;
-
-  border-radius: 7px;
-
-  background: white;
-
-  padding: 8px 11px;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 6px;
-
-  color: #55584f;
-
-  font-size: 11px;
-
-  font-weight: 600;
-}
-
-/* =====================================================
-   ANURAG CAMPUS MAP
-===================================================== */
-
-
-/* =====================================================
-   STUDYSPACE — ANURAG UNIVERSITY CAMPUS MAP
-   Real campus arrangement: Blocks A–I
-===================================================== */
-
-.anurag-map {
-  position: relative;
-  height: calc(100% - 67px);
-  overflow: hidden;
-  background: #e7e8e0;
-}
-
-/* =====================================================
-   MAP GRID
-===================================================== */
-
-.campus-texture {
-  position: absolute;
-  inset: 0;
-  opacity: 0.27;
-  background-image:
-    linear-gradient(#cdd0c7 1px, transparent 1px),
-    linear-gradient(90deg, #cdd0c7 1px, transparent 1px);
-  background-size: 42px 42px;
-  pointer-events: none;
-}
-
-/* =====================================================
-   CAMPUS WALKWAYS
-   Subtle roads so buildings remain the visual focus.
-===================================================== */
-
-.campus-road {
-  position: absolute;
-  background: #d0d2c9;
-  border-radius: 999px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.road-top {
-  width: 66%;
-  height: 9px;
-  left: 17%;
-  top: 25%;
-  transform: rotate(-5deg);
-}
-
-.road-left {
-  width: 43%;
-  height: 9px;
-  left: -7%;
-  top: 47%;
-  transform: rotate(69deg);
-}
-
-.road-right {
-  width: 43%;
-  height: 9px;
-  right: -7%;
-  top: 47%;
-  transform: rotate(-69deg);
-}
-
-.road-bottom {
-  width: 82%;
-  height: 9px;
-  left: 9%;
-  bottom: 16%;
-  transform: rotate(2deg);
-}
-
-.inner-road {
-  width: 45%;
-  height: 7px;
-  left: 28%;
-  top: 58%;
-  transform: rotate(90deg);
-  opacity: 0.5;
-}
-
-/* =====================================================
-   GREEN / OPEN AREAS
-===================================================== */
-
-.green-zone {
-  position: absolute;
-  background: #dce3d6;
-  border: 1px solid #ccd3c7;
-  opacity: 0.8;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.green-left {
-  width: 19%;
-  height: 26%;
-  left: 2%;
-  top: 60%;
-  border-radius: 48% 35% 50% 42%;
-}
-
-.green-center {
-  width: 25%;
-  height: 23%;
-  left: 37%;
-  top: 46%;
-  border-radius: 50%;
-}
-
-.green-right {
-  width: 17%;
-  height: 27%;
-  right: 3%;
-  top: 57%;
-  border-radius: 42% 50% 38% 48%;
-}
-
-/* =====================================================
-   BUILDINGS
-===================================================== */
-
-.campus-building {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  background: #fafaf5;
-  border: 1px solid #bfc2b9;
-  color: #555950;
-
-  box-shadow:
-    0 4px 12px rgba(32, 35, 31, 0.07);
-
-  z-index: 5;
-
-  transition:
-    transform 220ms ease,
-    box-shadow 220ms ease,
-    border-color 220ms ease;
-}
-
-.campus-building:hover {
-  transform: translateY(-3px);
-  border-color: #aeb2a7;
-
-  box-shadow:
-    0 10px 24px rgba(32, 35, 31, 0.12);
-}
-
-.campus-building strong {
-  font-family: "Manrope", sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  color: #4e524b;
-}
-
-.campus-building small {
-  margin-top: 4px;
-  color: #999d94;
-  font-size: 8px;
-}
-
-.building-code {
-  position: absolute;
-  top: 8px;
-  left: 9px;
-  color: #a3a69d;
-  font-size: 9px;
-  font-weight: 700;
-}
-
-/* =====================================================
-   ACTUAL ANURAG UNIVERSITY ARRANGEMENT
-
-   Entrance
-       ↓
-       A
-
-   B → C → D → H → Sports
-                 ↘
-                   E → F
-                       ↓
-                       G
-
-   F has a gateway/path leading to I.
-===================================================== */
-
-/* A — directly opposite the entrance */
-.building-a {
-  width: 20%;
-  height: 15%;
-  left: 40%;
-  top: 51%;
-  z-index: 7;
-}
-
-/* B — left of A */
-.building-b {
-  width: 16%;
-  height: 13%;
-  left: 23%;
-  top: 47%;
-}
-
-/* C — further left, continuing the circular movement */
-.building-c {
-  width: 16%;
-  height: 13%;
-  left: 10%;
-  top: 35%;
-}
-
-/* D — with a larger gap between C and D */
-.building-d {
-  width: 16%;
-  height: 13%;
-  left: 9%;
-  top: 18%;
-}
-
-/* H — beside D */
-.building-h {
-  width: 17%;
-  height: 14%;
-  left: 27%;
-  top: 16%;
-}
-
-/* Sports rooms — behind H */
-.sports-rooms {
-  position: absolute;
-
-  width: 17%;
-  height: 11%;
-  left: 27%;
-  top: 2%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-
-  border: 1px dashed #b9beb4;
-  background: #e0e5dc;
-  color: #7d8478;
-
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-
-  z-index: 4;
-}
-
-.sports-icon {
-  width: 22px;
-  height: 22px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid #b7beb1;
-  border-radius: 50%;
-
-  color: #899184;
-  font-size: 12px;
-}
-
-/* E — right side after H */
-.building-e {
-  width: 17%;
-  height: 14%;
-  left: 57%;
-  top: 18%;
-}
-
-/* F — beside E */
-.building-f {
-  width: 17%;
-  height: 14%;
-  left: 73%;
-  top: 33%;
-}
-
-/* G — below F */
-.building-g {
-  width: 16%;
-  height: 14%;
-  left: 75%;
-  top: 54%;
-}
-
-/* I — upper/right side, reached through F gateway */
-.building-i {
-  width: 15%;
-  height: 12%;
-  left: 78%;
-  top: 10%;
-}
-
-/* =====================================================
-   A BLOCK LANDMARK LABEL
-===================================================== */
-
-.building-a .a-label {
-  position: absolute;
-  bottom: -18px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  white-space: nowrap;
-
-  color: #9a9d94;
-  font-size: 6px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-}
-
-/* =====================================================
-   F → I GATEWAY
-===================================================== */
-
-.gateway-line {
-  position: absolute;
-
-  left: 77%;
-  top: 21%;
-
-  width: 17%;
-  height: 90px;
-
-  z-index: 3;
-  pointer-events: none;
-}
-
-.gateway-path {
-  position: absolute;
-
-  width: 4px;
-  height: 105px;
-
-  left: 50%;
-  top: -12px;
-
-  background: #c3c6bd;
-  border-radius: 999px;
-
-  transform:
-    translateX(-50%)
-    rotate(43deg);
-}
-
-.gateway-label {
-  position: absolute;
-
-  left: 50%;
-  top: 42%;
-
-  transform:
-    translate(-50%, -50%)
-    rotate(43deg);
-
-  padding: 4px 7px;
-
-  background: #e7e8e0;
-  color: #8b9087;
-
-  font-size: 7px;
-  font-weight: 600;
-  letter-spacing: 0.7px;
-
-  white-space: nowrap;
-}
-
-/* =====================================================
-   MAIN ENTRANCE
-===================================================== */
-
-.entrance-area {
-  position: absolute;
-
-  left: 41%;
-  bottom: 0;
-
-  width: 18%;
-  height: 20%;
-
-  z-index: 8;
-}
-
-.entrance-road {
-  position: absolute;
-
-  width: 7px;
-  height: 100%;
-
-  left: 50%;
-  bottom: 0;
-
-  transform: translateX(-50%);
-
-  background: #d0d2c9;
-}
-
-.entrance-gate {
-  position: absolute;
-
-  bottom: 8px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 140%;
-
-  padding: 9px 12px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-
-  background: #62695c;
-  color: white;
-
-  border-radius: 5px;
-
-  box-shadow:
-    0 5px 14px rgba(32, 35, 31, 0.14);
-}
-
-.entrance-gate strong {
-  white-space: nowrap;
-  font-size: 8px;
-  letter-spacing: 0.8px;
-}
-
-.entrance-gate span {
-  width: 5px;
-  height: 5px;
-
-  flex-shrink: 0;
-
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-/* =====================================================
-   OCCUPANCY PINS
-===================================================== */
-
-.campus-pin {
-  position: absolute;
-
-  width: 25px;
-  height: 25px;
-
-  padding: 0;
-
-  transform: translate(-50%, -50%);
-
-  border: 3px solid white;
-  border-radius: 50%;
-
-  background: transparent;
-
-  box-shadow:
-    0 4px 14px rgba(32, 35, 31, 0.22);
-
-  z-index: 20;
-
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.campus-pin span {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  border-radius: 50%;
-}
-
-.campus-pin.available span {
-  background: #69875b;
-}
-
-.campus-pin.filling span {
-  background: #bd9550;
-}
-
-.campus-pin.busy span {
-  background: #ad625a;
-}
-
-.campus-pin.selected {
-  transform:
-    translate(-50%, -50%)
-    scale(1.3);
-
-  box-shadow:
-    0 0 0 7px rgba(105, 135, 91, 0.13),
-    0 5px 18px rgba(32, 35, 31, 0.25);
-}
-
-/* =====================================================
-   COMPASS
-===================================================== */
-
-.campus-compass {
-  position: absolute;
-
-  right: 18px;
-  top: 18px;
-
-  width: 36px;
-  height: 36px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  border: 1px solid #c8cac1;
-  border-radius: 6px;
-
-  background: rgba(248, 248, 243, 0.94);
-  color: #666960;
-
-  z-index: 30;
-}
-
-.campus-compass strong {
-  font-size: 9px;
-}
-
-.campus-compass span {
-  font-size: 11px;
-}
-
-/* =====================================================
-   LEGEND
-===================================================== */
-
-.campus-legend {
-  position: absolute;
-
-  left: 16px;
-  bottom: 16px;
-
-  display: flex;
-  gap: 13px;
-
-  padding: 10px 12px;
-
-  border: 1px solid #d0d1c9;
-  border-radius: 7px;
-
-  background: rgba(248, 248, 243, 0.95);
-  color: #666960;
-
-  font-size: 10px;
-
-  z-index: 30;
-}
-
-.campus-legend div {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.campus-legend i {
-  width: 7px;
-  height: 7px;
-
-  display: block;
-
-  border-radius: 50%;
-}
-
-.campus-legend .available {
-  background: #69875b;
-}
-
-.campus-legend .filling {
-  background: #bd9550;
-}
-
-.campus-legend .busy {
-  background: #ad625a;
-}
-
-/* =====================================================
-   ZOOM CONTROLS
-===================================================== */
-
-.map-zoom {
-  position: absolute;
-
-  right: 18px;
-  bottom: 18px;
-
-  display: flex;
-  flex-direction: column;
-
-  border: 1px solid #d0d1c9;
-  border-radius: 6px;
-
-  overflow: hidden;
-
-  background: #f8f8f3;
-
-  z-index: 30;
-}
-
-.map-zoom button {
-  width: 32px;
-  height: 32px;
-
-  display: grid;
-  place-items: center;
-
-  border: 0;
-
-  background: transparent;
-  color: #666960;
-}
-
-.map-zoom button:hover {
-  background: #ecece6;
-}
-
-.map-zoom button + button {
-  border-top: 1px solid #d9dad2;
-}
-
-/* =====================================================
-   MAP RESPONSIVE TUNING
-===================================================== */
-
-@media (max-width: 1100px) {
-  .campus-building strong {
-    font-size: 9px;
-  }
-
-  .building-a {
-    left: 39%;
-  }
-
-  .building-b {
-    left: 21%;
-  }
-
-  .building-c {
-    left: 8%;
-  }
-
-  .building-d {
-    left: 7%;
-  }
-
-  .building-h {
-    left: 24%;
-  }
-
-  .building-e {
-    left: 56%;
-  }
-
-  .building-f {
-    left: 72%;
-  }
-
-  .building-g {
-    left: 74%;
-  }
-
-  .building-i {
-    left: 76%;
-  }
-}
-
-@media (max-width: 600px) {
-  .campus-building strong {
-    font-size: 7px;
-    letter-spacing: 0.3px;
-  }
-
-  .campus-building small {
-    font-size: 6px;
-  }
-
-  .building-code {
-    top: 5px;
-    left: 6px;
-    font-size: 7px;
-  }
-
-  .sports-rooms {
-    font-size: 6px;
-  }
-
-  .sports-icon {
-    width: 17px;
-    height: 17px;
-    font-size: 9px;
-  }
-
-  .campus-legend {
-    gap: 7px;
-    padding: 8px;
-    font-size: 8px;
-  }
-
-  .entrance-gate {
-    width: 155%;
-  }
-}
-
-
-/* =====================================================
    RESPONSIVE
 ===================================================== */
 
-@media (max-width: 950px) {
-  .building-a {
-    left: 39%;
-  }
-
-  .building-b {
-    left: 21%;
-  }
-
-  .building-c {
-    left: 7%;
-  }
-
-  .building-d {
-    left: 7%;
-  }
-
-  .building-h {
-    left: 24%;
-  }
-
-  .building-e {
-    left: 56%;
-  }
-
-  .building-f {
-    left: 72%;
-  }
-
-  .building-g {
-    left: 74%;
-  }
-
-  .building-i {
-    left: 77%;
+@media (max-width: 1050px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
-
-@media (max-width: 600px) {
-  .campus-building strong {
-    font-size: 8px;
-  }
-
-  .campus-building small {
-    font-size: 6px;
-  }
-
-  .building-code {
-    font-size: 7px;
-  }
-
-  .sports-rooms {
-    font-size: 6px;
-  }
-
-  .campus-legend {
-    gap: 7px;
-    font-size: 8px;
-  }
-}
-
-/* =====================================================
-   ROADS
-===================================================== */
-
-.campus-road {
-  position: absolute;
-
-  height: 15px;
-
-  border-radius: 20px;
-
-  background: #d0d2c9;
-
-  z-index: 1;
-}
-
-.road-main {
-  width: 110%;
-
-  left: -5%;
-
-  top: 52%;
-
-  transform: rotate(-9deg);
-}
-
-.road-east {
-  width: 65%;
-
-  right: -12%;
-
-  top: 37%;
-
-  transform: rotate(55deg);
-}
-
-.road-west {
-  width: 52%;
-
-  left: -8%;
-
-  top: 24%;
-
-  transform: rotate(60deg);
-}
-
-.road-south {
-  width: 90%;
-
-  left: 7%;
-
-  bottom: 15%;
-
-  transform: rotate(3deg);
-}
-
-/* =====================================================
-   GREEN AREA
-===================================================== */
-
-.campus-green {
-  position: absolute;
-
-  background: #dce3d6;
-
-  border: 1px solid #cad3c5;
-
-  z-index: 0;
-}
-
-.green-main {
-  width: 30%;
-
-  height: 24%;
-
-  left: 35%;
-
-  top: 35%;
-
-  border-radius: 50%;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  color: #9ba494;
-
-  font-size: 8px;
-
-  letter-spacing: 1px;
-}
-
-/* =====================================================
-   BUILDINGS
-===================================================== */
-
-.campus-building {
-  position: absolute;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: #f8f8f2;
-
-  border: 1px solid #bfc1b8;
-
-  color: #62665e;
-
-  box-shadow:
-    0 5px 14px rgba(32, 35, 31, 0.08);
-
-  z-index: 3;
-
-  transition:
-    transform 200ms ease,
-    box-shadow 200ms ease;
-}
-
-.campus-building:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 10px 22px rgba(32, 35, 31, 0.12);
-}
-
-.campus-building strong {
-  font-family: "Manrope", sans-serif;
-
-  font-size: 10px;
-
-  letter-spacing: 0.8px;
-}
-
-.campus-building small {
-  margin-top: 4px;
-
-  color: #999c93;
-
-  font-size: 8px;
-}
-
-.building-code {
-  position: absolute;
-
-  top: 7px;
-
-  left: 8px;
-
-  color: #a0a39a;
-
-  font-size: 9px;
-
-  font-weight: 700;
-}
-
-/* =====================================================
-   BUILDING POSITIONS
-===================================================== */
-
-.block-a {
-  width: 20%;
-
-  height: 13%;
-
-  left: 10%;
-
-  top: 17%;
-}
-
-.block-b {
-  width: 18%;
-
-  height: 16%;
-
-  left: 34%;
-
-  top: 12%;
-}
-
-.block-c-main {
-  width: 20%;
-
-  height: 14%;
-
-  left: 58%;
-
-  top: 17%;
-}
-
-.block-d {
-  width: 22%;
-
-  height: 15%;
-
-  left: 38%;
-
-  top: 56%;
-}
-
-.block-e {
-  width: 19%;
-
-  height: 13%;
-
-  left: 68%;
-
-  top: 54%;
-}
-
-.block-f {
-  width: 21%;
-
-  height: 15%;
-
-  left: 13%;
-
-  top: 57%;
-}
-
-.block-g {
-  width: 15%;
-
-  height: 12%;
-
-  left: 74%;
-
-  top: 76%;
-}
-
-/* =====================================================
-   SPORTS COMPLEX
-===================================================== */
-
-.sports-area {
-  position: absolute;
-
-  width: 29%;
-
-  height: 21%;
-
-  right: 3%;
-
-  bottom: 5%;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  color: #858b7f;
-
-  font-size: 8px;
-
-  letter-spacing: 1px;
-
-  z-index: 2;
-}
-
-.running-track {
-  width: 90%;
-
-  height: 68%;
-
-  border: 7px solid #d0bda8;
-
-  border-radius: 50%;
-
-  display: grid;
-
-  place-items: center;
-}
-
-.sports-field {
-  width: 76%;
-
-  height: 62%;
-
-  border-radius: 50%;
-
-  background: #cedbc8;
-
-  border: 1px solid #b8c7b0;
-}
-
-/* =====================================================
-   LANDMARKS
-===================================================== */
-
-.campus-landmark {
-  position: absolute;
-
-  padding: 8px 10px;
-
-  border: 1px dashed #b7bbb0;
-
-  background: rgba(248, 248, 242, 0.78);
-
-  color: #81867b;
-
-  font-size: 8px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.7px;
-
-  z-index: 4;
-}
-
-.auditorium {
-  left: 58%;
-
-  top: 39%;
-}
-
-.cafeteria {
-  left: 27%;
-
-  top: 43%;
-}
-
-/* =====================================================
-   MAIN GATE
-===================================================== */
-
-.main-gate {
-  position: absolute;
-
-  left: 5%;
-
-  bottom: 4%;
-
-  padding: 8px 12px;
-
-  background: #62695c;
-
-  color: white;
-
-  border-radius: 4px;
-
-  font-size: 8px;
-
-  font-weight: 700;
-
-  letter-spacing: 1px;
-
-  z-index: 6;
-}
-
-/* =====================================================
-   MAP PINS
-===================================================== */
-
-.campus-pin {
-  position: absolute;
-
-  width: 25px;
-
-  height: 25px;
-
-  padding: 0;
-
-  transform: translate(-50%, -50%);
-
-  border: 3px solid white;
-
-  border-radius: 50%;
-
-  background: transparent;
-
-  box-shadow:
-    0 4px 13px rgba(32, 35, 31, 0.22);
-
-  z-index: 15;
-
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.campus-pin span {
-  display: block;
-
-  width: 100%;
-
-  height: 100%;
-
-  border-radius: 50%;
-}
-
-.campus-pin.available span {
-  background: #69875b;
-}
-
-.campus-pin.filling span {
-  background: #bd9550;
-}
-
-.campus-pin.busy span {
-  background: #ad625a;
-}
-
-.campus-pin.selected {
-  transform:
-    translate(-50%, -50%)
-    scale(1.3);
-
-  box-shadow:
-    0 0 0 7px rgba(105, 135, 91, 0.14),
-    0 5px 18px rgba(32, 35, 31, 0.24);
-}
-
-/* =====================================================
-   COMPASS
-===================================================== */
-
-.campus-compass {
-  position: absolute;
-
-  right: 18px;
-
-  top: 18px;
-
-  width: 36px;
-
-  height: 36px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border: 1px solid #c8cac1;
-
-  border-radius: 6px;
-
-  background: rgba(247, 247, 243, 0.94);
-
-  color: #666960;
-
-  z-index: 25;
-}
-
-.campus-compass strong {
-  font-size: 9px;
-}
-
-.campus-compass span {
-  font-size: 11px;
-}
-
-/* =====================================================
-   LEGEND
-===================================================== */
-
-.campus-legend {
-  position: absolute;
-
-  left: 16px;
-
-  bottom: 16px;
-
-  display: flex;
-
-  gap: 13px;
-
-  padding: 10px 12px;
-
-  border: 1px solid #d0d1c9;
-
-  border-radius: 7px;
-
-  background: rgba(247, 247, 243, 0.95);
-
-  color: #666960;
-
-  font-size: 10px;
-
-  z-index: 25;
-}
-
-.campus-legend div {
-  display: flex;
-
-  align-items: center;
-
-  gap: 5px;
-}
-
-.campus-legend i {
-  width: 7px;
-
-  height: 7px;
-
-  display: block;
-
-  border-radius: 50%;
-}
-
-.campus-legend .available {
-  background: #69875b;
-}
-
-.campus-legend .filling {
-  background: #bd9550;
-}
-
-.campus-legend .busy {
-  background: #ad625a;
-}
-
-/* =====================================================
-   ZOOM
-===================================================== */
-
-.map-zoom {
-  position: absolute;
-
-  right: 18px;
-
-  bottom: 18px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  border: 1px solid #d0d1c9;
-
-  border-radius: 6px;
-
-  overflow: hidden;
-
-  background: #f7f7f3;
-
-  z-index: 25;
-}
-
-.map-zoom button {
-  width: 32px;
-
-  height: 32px;
-
-  display: grid;
-
-  place-items: center;
-
-  border: 0;
-
-  background: transparent;
-
-  color: #666960;
-}
-
-.map-zoom button:hover {
-  background: #ecece6;
-}
-
-.map-zoom button + button {
-  border-top: 1px solid #d9dad2;
-}
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
 
 @media (max-width: 950px) {
   .nav-links {
     display: none;
   }
-
   .hero {
     padding-top: 65px;
   }
-
   .explorer {
     grid-template-columns: 1fr;
   }
-
   .spaces-panel {
+    height: auto;
+    overflow-y: visible;
     padding-right: 5vw;
   }
-
   .map-panel {
     position: relative;
-
     top: 0;
-
     height: 600px;
-
     min-height: 0;
+    padding: 15px;
   }
 }
 
@@ -2083,40 +667,26 @@ h1 span {
   .navbar {
     padding: 0 20px;
   }
-
   .campus-selector {
     display: none;
   }
-
   .hero {
     padding: 55px 20px 40px;
   }
-
   h1 {
     font-size: 58px;
-
     letter-spacing: -3px;
   }
-
   .hero-description {
     font-size: 15px;
   }
-
   .spaces-panel {
     padding: 30px 20px 45px;
   }
-
   .sort-button {
     display: none;
   }
-
   .map-panel {
-    padding: 15px;
-
     height: 500px;
-  }
-
-  .campus-legend {
-    gap: 7px;
   }
 }

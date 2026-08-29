@@ -1,16 +1,15 @@
-import express from 'express';
+import express from "express";
 import {
-  loginOrRegisterStudent,
-  getCurrentStudentSession,
-  handleCheckIn,
-  handleCheckOut
-} from '../controllers/studentController.js';
+  loginStudent,
+  getStudentProfile,
+  checkIn,
+  checkOut,
+} from "../controllers/studentController.js";
 
 const router = express.Router();
-
-router.post('/login', loginOrRegisterStudent);
-router.get('/me/:studentId', getCurrentStudentSession);
-router.post('/check-in', handleCheckIn);
-router.post('/check-out', handleCheckOut);
+router.post("/login", loginStudent);
+router.get("/me/:studentId", getStudentProfile);
+router.post("/check-in", checkIn);
+router.post("/check-out", checkOut);
 
 export default router;

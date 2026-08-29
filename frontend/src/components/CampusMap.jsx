@@ -1,4 +1,3 @@
-// frontend/src/components/CampusMap.jsx
 import { useState } from "react";
 import gsap from "gsap";
 import { Navigation, ZoomIn, ZoomOut } from "lucide-react";
@@ -16,6 +15,24 @@ const buildings = [
   { id: "g", label: "BLOCK G", sub: "Library", x: 75, y: 55, w: 16, h: 14 },
 ];
 
+// 9:00 AM to 4:00 PM Operating Hours Check
+const isCampusOpen = () => {
+  const now = new Date();
+  const currentHour = now.getHours();
+  const currentMinute = now.getMinutes();
+  const currentTime = currentHour * 60 + currentMinute;
+  return currentTime >= 9 * 60 && currentTime < 16 * 60;
+
+};
+
+const getRelativeTime = (dateStr) => {
+  if (!dateStr) return "Just now";
+  const diff = Math.floor((new Date() - new Date(dateStr)) / (1000 * 60));
+  if (diff < 1) return "Just now";
+  if (diff >= 30) return "Status Unverified";
+  return `${diff} min ago`;
+};
+
 const buildingForSpace = (space) => {
   const building = (space.building || "").toLowerCase();
   const name = (space.name || "").toLowerCase();
@@ -31,6 +48,7 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
   const [zoom, setZoom] = useState(1);
   const [hoveredSpace, setHoveredSpace] = useState(null);
 
+  const open = isCampusOpen();
   const groupedSpaces = {};
 
   spaces.forEach((space) => {
@@ -41,9 +59,18 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
   });
 
   const getStatus = (space) => {
+    // If closed, return neutral gray
+    if (!open) {
+      return { label: "Closed", color: "#8a8e85" };
+    }
+
     const free = (space.totalSeats || 0) - (space.occupiedSeats || 0);
-    if (free <= 0 || space.status === "Full") return { label: "Full", color: "#ad625a" };
-    if (space.status === "Filling Up" || free <= 15) return { label: "Filling up", color: "#bd9550" };
+    if (free <= 0 || space.status === "Busy" || space.status === "Full") {
+      return { label: "Busy", color: "#ad625a" };
+    }
+    if (space.status === "Filling Up" || free <= 15) {
+      return { label: "Filling up", color: "#bd9550" };
+    }
     return { label: "Available", color: "#69875b" };
   };
 
@@ -111,26 +138,7 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
           </div>
         </div>
 
-        <button
-          type="button"
-          style={{
-            height: "38px",
-            padding: "0 14px",
-            display: "flex",
-            alignItems: "center",
-            gap: "7px",
-            border: "1px solid #d6d7cf",
-            borderRadius: "8px",
-            background: "#fff",
-            color: "#4c5149",
-            fontSize: "12px",
-            fontWeight: 500,
-            cursor: "pointer",
-          }}
-        >
-          <Navigation size={15} />
-          Locate
-        </button>
+       
       </div>
 
       {/* Map Content */}
@@ -292,7 +300,7 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
                     type="button"
                     data-campus-pin={space._id}
                     onClick={() => handleSpaceClick(space)}
-                    aria-label={`${space.name}, ${free} seats free`}
+                    aria-label={`${space.name}, ${open ? free : 0} seats free`}
                     style={{
                       width: isSelected ? "17px" : "13px",
                       height: isSelected ? "17px" : "13px",
@@ -301,7 +309,7 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
                       border: "2px solid white",
                       background: status.color,
                       boxShadow: isSelected
-                        ? "0 0 0 5px rgba(105,135,91,.14), 0 3px 10px rgba(0,0,0,.2)"
+                        ? "0 0 0 5px rgba(138,142,133,.2), 0 3px 10px rgba(0,0,0,.2)"
                         : "0 2px 7px rgba(0,0,0,.18)",
                       cursor: "pointer",
                       display: "block",
@@ -359,10 +367,10 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
                         }}
                       >
                         <strong style={{ fontSize: "20px", lineHeight: 1 }}>
-                          {free}
+                          {open ? free : 0}
                         </strong>
                         <span style={{ fontSize: "9px", color: "#777c73" }}>
-                          seats free
+                          {open ? "seats free" : "seats (Closed)"}
                         </span>
                       </div>
 
@@ -396,7 +404,7 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
                         </span>
 
                         <span style={{ fontSize: "8px", color: "#8b9087" }}>
-                          Verified
+                          Verified {getRelativeTime(space.lastUpdated)}
                         </span>
                       </div>
 
@@ -452,7 +460,7 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
             bottom: "16px",
             display: "flex",
             alignItems: "center",
-            gap: "12px",
+            gap: "10px",
             padding: "9px 11px",
             background: "rgba(250,250,247,.96)",
             border: "1px solid #d0d1ca",
@@ -465,6 +473,7 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
           <Legend color="#69875b" text="Available" />
           <Legend color="#bd9550" text="Filling up" />
           <Legend color="#ad625a" text="Busy" />
+          <Legend color="#8a8e85" text="Closed" />
         </div>
 
         {/* Zoom */}

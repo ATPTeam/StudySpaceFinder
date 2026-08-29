@@ -1,8 +1,9 @@
-// frontend/src/api/api.js
 import axios from 'axios';
 import { io } from 'socket.io-client';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+// Use production backend URL from .env or fallback to localhost in development
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+const API_BASE_URL = `${BACKEND_URL}/api`;
 
 // Create Axios Instance
 export const apiClient = axios.create({
@@ -13,7 +14,9 @@ export const apiClient = axios.create({
 });
 
 // Initialize Socket.io Connection
-export const socket = io('http://localhost:5000');
+export const socket = io(BACKEND_URL, {
+  transports: ['websocket', 'polling']
+});
 
 // API Helper Methods
 export const fetchSpaces = (params) => apiClient.get('/spaces', { params });

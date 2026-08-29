@@ -1,177 +1,184 @@
-// backend/utils/seedData.js
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import StudySpace from '../models/StudySpace.js';
-import Student from '../models/Student.js';
-import CheckInLog from '../models/CheckInLog.js';
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import Space from "../models/Space.js";
 
-dotenv.config();
+dotenv.config({ path: "./.env" });
 
-const sampleSpaces = [
+const seedSpaces = [
   {
-    name: 'D Block Library',
-    building: 'Block D',
-    floor: '1st Floor',
-    vibe: 'Silent',
-    facilities: ['Wi-Fi', 'Power', 'AC'],
-    totalSeats: 40,
+    name: "D Block Library",
+    floor: "1st Floor",
+    building: "Block D",
+    type: "Library",
     occupiedSeats: 22,
-    status: 'Available',
-    hourlyTrends: [0, 0, 0, 0, 0, 10, 25, 45, 70, 85, 90, 85, 75, 80, 88, 92, 70, 50, 30, 10, 0, 0, 0, 0]
+    totalSeats: 40,
+    vibe: "Silent",
+    facilities: ["Wi-Fi", "Power", "AC"],
+    x: 17,
+    y: 35,
   },
   {
-    name: 'Seminar Hall 1',
-    building: 'Block D',
-    floor: 'Ground Floor',
-    vibe: 'Discussion',
-    facilities: ['Wi-Fi', 'Power'],
-    totalSeats: 40,
+    name: "Seminar Hall 1",
+    floor: "Ground Floor",
+    building: "Block D",
+    type: "Seminar Hall",
     occupiedSeats: 32,
-    status: 'Filling Up',
-    hourlyTrends: [0, 0, 0, 0, 0, 5, 15, 30, 60, 75, 80, 85, 90, 95, 85, 80, 60, 40, 20, 5, 0, 0, 0, 0]
+    totalSeats: 40,
+    vibe: "Discussion",
+    facilities: ["Wi-Fi", "Power"],
+    x: 20,
+    y: 35,
   },
   {
-    name: 'Seminar Hall 2',
-    building: 'Block D',
-    floor: 'Ground Floor',
-    vibe: 'Discussion',
-    facilities: ['Wi-Fi', 'Whiteboard'],
-    totalSeats: 40,
+    name: "Seminar Hall 2",
+    floor: "Ground Floor",
+    building: "Block D",
+    type: "Seminar Hall",
     occupiedSeats: 16,
-    status: 'Available',
-    hourlyTrends: [0, 0, 0, 0, 0, 0, 10, 20, 50, 70, 75, 80, 80, 85, 90, 75, 50, 30, 10, 0, 0, 0, 0, 0]
-  },
-  {
-    name: 'E Block Library',
-    building: 'Block E',
-    floor: '1st Floor',
-    vibe: 'Silent',
-    facilities: ['Wi-Fi', 'Power', 'AC'],
-    totalSeats: 45,
-    occupiedSeats: 19,
-    status: 'Available',
-    hourlyTrends: [0, 0, 0, 0, 0, 15, 30, 50, 80, 85, 95, 90, 80, 85, 90, 95, 80, 60, 40, 15, 0, 0, 0, 0]
-  },
-  {
-    name: 'E Seminar Hall',
-    building: 'Block E',
-    floor: 'Ground Floor',
-    vibe: 'Discussion',
-    facilities: ['Projector', 'Whiteboard'],
     totalSeats: 40,
-    occupiedSeats: 32,
-    status: 'Filling Up',
-    hourlyTrends: [0, 0, 0, 0, 0, 10, 20, 35, 60, 75, 85, 80, 75, 85, 80, 75, 60, 40, 20, 0, 0, 0, 0, 0]
+    vibe: "Discussion",
+    facilities: ["Wi-Fi", "Whiteboard"],
+    x: 23,
+    y: 35,
   },
   {
-    name: 'G Block Library 1st Floor',
-    building: 'Block G',
-    floor: '1st Floor',
-    vibe: 'Silent',
-    facilities: ['Wi-Fi', 'Power', 'AC'],
-    totalSeats: 50,
+    name: "E Block Library",
+    floor: "1st Floor",
+    building: "Block E",
+    type: "Library",
     occupiedSeats: 19,
-    status: 'Available',
-    hourlyTrends: [0, 0, 0, 0, 0, 5, 10, 25, 45, 60, 70, 75, 70, 65, 75, 60, 40, 20, 10, 0, 0, 0, 0, 0]
-  },
-  {
-    name: 'G Block Library 2nd Floor',
-    building: 'Block G',
-    floor: '2nd Floor',
-    vibe: 'Silent', // <-- changed from 'Quiet' to 'Silent'
-    facilities: ['Wi-Fi', 'Power'],
     totalSeats: 45,
+    vibe: "Silent",
+    facilities: ["Wi-Fi", "Power", "AC"],
+    x: 65,
+    y: 35,
+  },
+  {
+    name: "E Seminar Hall",
+    floor: "Ground Floor",
+    building: "Block E",
+    type: "Seminar Hall",
+    occupiedSeats: 32,
+    totalSeats: 40,
+    vibe: "Discussion",
+    facilities: ["Projector", "Whiteboard"],
+    x: 69,
+    y: 35,
+  },
+  {
+    name: "G Block Library",
+    floor: "1st Floor",
+    building: "Block G",
+    type: "Library",
+    occupiedSeats: 19,
+    totalSeats: 50,
+    vibe: "Silent",
+    facilities: ["Wi-Fi", "Power", "AC"],
+    x: 78,
+    y: 71,
+  },
+  {
+    name: "G Block Library",
+    floor: "2nd Floor",
+    building: "Block G",
+    type: "Library",
     occupiedSeats: 33,
-    status: 'Filling Up',
-    hourlyTrends: [0, 0, 0, 0, 0, 5, 15, 30, 60, 75, 80, 85, 90, 95, 85, 80, 60, 40, 20, 5, 0, 0, 0, 0]
+    totalSeats: 45,
+    vibe: "Quiet",
+    facilities: ["Wi-Fi", "Power"],
+    x: 82,
+    y: 71,
   },
   {
-    name: 'H Seminar Hall 1',
-    building: 'Block H',
-    floor: '1st Floor',
-    vibe: 'Discussion',
-    facilities: ['Wi-Fi', 'Projector'],
-    totalSeats: 60,
+    name: "H Seminar Hall 1",
+    floor: "1st Floor",
+    building: "Block H",
+    type: "Seminar Hall",
     occupiedSeats: 18,
-    status: 'Available',
-    hourlyTrends: [0, 0, 0, 0, 0, 10, 25, 45, 70, 85, 90, 85, 75, 80, 88, 92, 70, 50, 30, 10, 0, 0, 0, 0]
+    totalSeats: 60,
+    vibe: "Discussion",
+    facilities: ["Wi-Fi", "Projector"],
+    x: 31,
+    y: 34,
   },
   {
-    name: 'H Seminar Hall 2',
-    building: 'Block H',
-    floor: '2nd Floor',
-    vibe: 'Discussion',
-    facilities: ['Wi-Fi', 'Whiteboard'],
-    totalSeats: 60,
+    name: "H Seminar Hall 2",
+    floor: "2nd Floor",
+    building: "Block H",
+    type: "Seminar Hall",
     occupiedSeats: 42,
-    status: 'Filling Up',
-    hourlyTrends: [0, 0, 0, 0, 0, 5, 15, 30, 60, 75, 80, 85, 90, 95, 85, 80, 60, 40, 20, 5, 0, 0, 0, 0]
+    totalSeats: 60,
+    vibe: "Discussion",
+    facilities: ["Wi-Fi", "Whiteboard"],
+    x: 34,
+    y: 34,
   },
   {
-    name: 'H Seminar Hall 3',
-    building: 'Block H',
-    floor: '3rd Floor',
-    vibe: 'Discussion',
-    facilities: ['Wi-Fi', 'Projector'],
-    totalSeats: 60,
+    name: "H Seminar Hall 3",
+    floor: "3rd Floor",
+    building: "Block H",
+    type: "Seminar Hall",
     occupiedSeats: 9,
-    status: 'Available',
-    hourlyTrends: [0, 0, 0, 0, 0, 0, 10, 20, 50, 70, 75, 80, 80, 85, 90, 75, 50, 30, 10, 0, 0, 0, 0, 0]
+    totalSeats: 60,
+    vibe: "Discussion",
+    facilities: ["Wi-Fi", "Projector"],
+    x: 37,
+    y: 34,
   },
   {
-    name: 'H Seminar Hall 4',
-    building: 'Block H',
-    floor: '4th Floor',
-    vibe: 'Discussion',
-    facilities: ['Wi-Fi'],
-    totalSeats: 60,
+    name: "H Seminar Hall 4",
+    floor: "4th Floor",
+    building: "Block H",
+    type: "Seminar Hall",
     occupiedSeats: 52,
-    status: 'Full',
-    hourlyTrends: [0, 0, 0, 0, 0, 15, 30, 50, 80, 85, 95, 90, 80, 85, 90, 95, 80, 60, 40, 15, 0, 0, 0, 0]
+    totalSeats: 60,
+    vibe: "Discussion",
+    facilities: ["Wi-Fi"],
+    x: 40,
+    y: 34,
   },
   {
-    name: 'H Seminar Hall 5',
-    building: 'Block H',
-    floor: '5th Floor',
-    vibe: 'Discussion',
-    facilities: ['Wi-Fi', 'Projector'],
-    totalSeats: 60,
+    name: "H Seminar Hall 5",
+    floor: "5th Floor",
+    building: "Block H",
+    type: "Seminar Hall",
     occupiedSeats: 24,
-    status: 'Available',
-    hourlyTrends: [0, 0, 0, 0, 0, 10, 20, 35, 60, 75, 85, 80, 75, 85, 80, 75, 60, 40, 20, 0, 0, 0, 0, 0]
+    totalSeats: 60,
+    vibe: "Discussion",
+    facilities: ["Wi-Fi", "Projector"],
+    x: 43,
+    y: 34,
   },
   {
-    name: 'H Seminar Hall 6',
-    building: 'Block H',
-    floor: '6th Floor',
-    vibe: 'Discussion',
-    facilities: ['Wi-Fi', 'Whiteboard'],
-    totalSeats: 60,
+    name: "H Seminar Hall 6",
+    floor: "6th Floor",
+    building: "Block H",
+    type: "Seminar Hall",
     occupiedSeats: 39,
-    status: 'Filling Up',
-    hourlyTrends: [0, 0, 0, 0, 0, 5, 10, 25, 45, 60, 70, 75, 70, 65, 75, 60, 40, 20, 10, 0, 0, 0, 0, 0]
-  }
-];
-
-const sampleStudents = [
-  { studentId: 'STU101', name: 'Alex Kumar', department: 'Computer Science' },
-  { studentId: 'STU102', name: 'Priya Sharma', department: 'Information Technology' }
+    totalSeats: 60,
+    vibe: "Discussion",
+    facilities: ["Wi-Fi", "Whiteboard"],
+    x: 46,
+    y: 34,
+  },
 ];
 
 const seedDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI);
-    await StudySpace.deleteMany();
-    await Student.deleteMany();
-    await CheckInLog.deleteMany();
+    
+    // Drop whole collection to clean legacy indexes completely
+    try {
+      await mongoose.connection.collection("spaces").drop();
+    } catch (e) {
+      // Collection didn't exist yet, proceed safely
+    }
 
-    await StudySpace.insertMany(sampleSpaces);
-    await Student.insertMany(sampleStudents);
-
-    console.log('✅ MongoDB populated with Anurag University rooms matching frontend!');
+    await Space.insertMany(seedSpaces);
+    console.log("🌱 All 13 campus spaces seeded successfully!");
     process.exit(0);
   } catch (error) {
-    console.error(`❌ Seeding failed: ${error.message}`);
+    console.error("Seeding Error:", error);
     process.exit(1);
   }
 };
