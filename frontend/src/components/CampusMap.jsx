@@ -3,16 +3,97 @@ import gsap from "gsap";
 import { Navigation, ZoomIn, ZoomOut } from "lucide-react";
 
 const buildings = [
-  { id: "sports", label: "SPORTS ROOMS", sub: "", x: 25, y: 3, w: 18, h: 11, type: "sports" },
-  { id: "d", label: "BLOCK D", sub: "Academic", x: 7, y: 19, w: 17, h: 14 },
-  { id: "h", label: "BLOCK H", sub: "Seminar Halls", x: 27, y: 17, w: 19, h: 15 },
-  { id: "e", label: "BLOCK E", sub: "Academic", x: 57, y: 19, w: 18, h: 14 },
-  { id: "i", label: "BLOCK I", sub: "Academic", x: 78, y: 10, w: 15, h: 13 },
-  { id: "c", label: "BLOCK C", sub: "Civil", x: 9, y: 36, w: 17, h: 14 },
-  { id: "f", label: "BLOCK F", sub: "Examinations", x: 73, y: 34, w: 17, h: 14 },
-  { id: "b", label: "BLOCK B", sub: "Pharmacy", x: 22, y: 49, w: 17, h: 14 },
-  { id: "a", label: "BLOCK A", sub: "Academic", x: 40, y: 53, w: 21, h: 16 },
-  { id: "g", label: "BLOCK G", sub: "Library", x: 75, y: 55, w: 16, h: 14 },
+  {
+    id: "i",
+    label: "BLOCK I",
+    sub: "Academic",
+    x: 5,
+    y: 10,
+    w: 18,
+    h: 17,
+  },
+  {
+    id: "g",
+    label: "BLOCK G",
+    sub: "Library",
+    x: 27,
+    y: 7,
+    w: 19,
+    h: 14,
+  },
+  {
+    id: "f",
+    label: "BLOCK F",
+    sub: "Examinations",
+    x: 27,
+    y: 25,
+    w: 19,
+    h: 12,
+  },
+  {
+    id: "e",
+    label: "BLOCK E",
+    sub: "Academic",
+    x: 27,
+    y: 41,
+    w: 19,
+    h: 14,
+  },
+  {
+    id: "a",
+    label: "BLOCK A",
+    sub: "Academic",
+    x: 49,
+    y: 25,
+    w: 20,
+    h: 18,
+  },
+  {
+    id: "sports",
+    label: "SPORTS ROOMS",
+    sub: "",
+    x: 49,
+    y: 47,
+    w: 20,
+    h: 11,
+    type: "sports",
+  },
+  {
+    id: "b",
+    label: "BLOCK B",
+    sub: "Pharmacy",
+    x: 72,
+    y: 7,
+    w: 20,
+    h: 14,
+  },
+  {
+    id: "d",
+    label: "BLOCK D",
+    sub: "Academic",
+    x: 72,
+    y: 25,
+    w: 20,
+    h: 14,
+  },
+  {
+    id: "h",
+    label: "BLOCK H",
+    sub: "Seminar Halls",
+    x: 72,
+    y: 43,
+    w: 20,
+    h: 14,
+  },
+  {
+    id: "c",
+    label: "BLOCK C",
+    sub: "Civil",
+    x: 72,
+    y: 60,
+    w: 20,
+    h: 12,
+  },
 ];
 
 // 9:00 AM to 4:00 PM Operating Hours Check
@@ -22,8 +103,6 @@ const isCampusOpen = () => {
   const currentMinute = now.getMinutes();
   const currentTime = currentHour * 60 + currentMinute;
   return currentTime >= 9 * 60 && currentTime < 16 * 60;
-
-
 };
 
 const getRelativeTime = (dateStr) => {
@@ -89,7 +168,7 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
           repeat: 1,
           yoyo: true,
           ease: "power2.out",
-        }
+        },
       );
     }
   };
@@ -138,8 +217,6 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
             Campus map
           </div>
         </div>
-
-       
       </div>
 
       {/* Map Content */}
@@ -201,9 +278,13 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
           />
 
           {/* Green areas */}
-          <div style={greenStyle("2%", "3%", "19%", "23%", "48% 42% 52% 45%")} />
+          <div
+            style={greenStyle("2%", "3%", "19%", "23%", "48% 42% 52% 45%")}
+          />
           <div style={greenStyle("37%", "51%", "25%", "22%", "50%")} />
-          <div style={greenStyle("80%", "3%", "18%", "24%", "45% 50% 45% 52%")} />
+          <div
+            style={greenStyle("80%", "3%", "18%", "24%", "45% 50% 45% 52%")}
+          />
 
           {/* Buildings */}
           {buildings.map((building) => {
@@ -281,7 +362,10 @@ function CampusMap({ spaces = [], selectedSpace, onSelectSpace }) {
               const pinX = building.x + spacing * (index + 1);
               const pinY = building.y + building.h + 1.7;
               const status = getStatus(space);
-              const free = Math.max(0, (space.totalSeats || 0) - (space.occupiedSeats || 0));
+              const free = Math.max(
+                0,
+                (space.totalSeats || 0) - (space.occupiedSeats || 0),
+              );
               const isSelected = selectedSpace?._id === space._id;
               const isHovered = hoveredSpace?._id === space._id;
 

@@ -1,0 +1,40 @@
+<mxfile host="65bd71144e">
+    <diagram id="agoROPz47kyX5qc1aUo2" name="Page-1">
+        <mxGraphModel dx="761" dy="555" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="A-Block&lt;div&gt;/CSE main block&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="180" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="B-Block&lt;div&gt;/pharmacy&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="180" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="D-Block" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="250" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="H-Block" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="560" y="340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="G-Block&lt;div&gt;/placements&lt;/div&gt;&lt;div&gt;/library&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="150" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="F-Block&lt;div&gt;/examination branch&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="250" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Sports Complex" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="320" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="E-Block&lt;div&gt;/Electrical Branch&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="320" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="I-Block&lt;div&gt;/AI-ML branch&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="30" y="200" width="160" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="c-Block" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="70" width="50" height="90" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
